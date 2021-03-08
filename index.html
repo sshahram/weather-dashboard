@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 </head>
 <body>
+    <!-- header -->
+    <header>
+        <h1 class="text-center">Weather Dashboard</h1>
+    </header>
+    <!-- container to hold two columns -->
+    <main class="flex-row justify-space-between">
+        <!-- search box and results column -->
+        <div class="col-12 col-md-4">
+            <!-- search form -->
+            <form id="user-search" class="form-inline">
+                <label class="form-label" for="search">Search for a City: </label>
+                <input name="search" id="search" type="text" autofocus="true" class="form-input" />
+                <button type="submit" class="btn fas fa-search"></button>
+              </form>
+        </div>
+        <!-- weather forcast column -->
+        <div class="col-12 col-md-8">
+
+        </div>
+    </main>
     
 </body>
 </html>
