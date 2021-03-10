@@ -60,10 +60,10 @@ var displayWeatherinfo = function(forecast, searchCity) {
 
     // create html element to hold information
 
-    // city name
+    // city name and date
     var cityName = document.createElement("h2")
     cityName.classList ="card-title d-flex align-items-center lead font-weight-bold"
-    cityName.textContent =  forecast.name;
+    cityName.textContent =  forecast.name + " (" + moment().format("L") + ")";
     weatherContainerEl.appendChild(cityName);
 
 
@@ -86,7 +86,7 @@ var displayWeatherinfo = function(forecast, searchCity) {
     weatherContainerEl.appendChild(windSpeed);
 
     // uv index
-
+    // add function for uv index here
 
 };
 
