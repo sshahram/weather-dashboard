@@ -60,10 +60,26 @@ var displayWeatherinfo = function(forecast, searchCity) {
     // citySearchTerm.textContent = searchCity;
 
     // create html element to hold information
-    var weather = document.createElement("div")
-    weather.classList ="list-group-item"
-    weather.textContent = "weather: " +  forecast.main.temp +  " \u00B0F";
-    weatherContainerEl.appendChild(weather);
+
+    // temperature
+    var temperature = document.createElement("div")
+    temperature.classList ="list-group-item"
+    temperature.textContent = "Temperature: " +  forecast.main.temp +  " \u00B0F";
+    weatherContainerEl.appendChild(temperature);
+
+    // humidity
+    var humidity = document.createElement("div")
+    humidity.classList ="list-group-item"
+    humidity.textContent = "Humidity: " +  forecast.main.humidity +  " %";
+    weatherContainerEl.appendChild(humidity);
+
+    // wind speed
+    var windSpeed = document.createElement("div")
+    windSpeed.classList ="list-group-item"
+    windSpeed.textContent = "Wind Speed: " +  forecast.wind.speed +  " MPH";
+    weatherContainerEl.appendChild(windSpeed);
+
+    // uv index
 
 
 };
