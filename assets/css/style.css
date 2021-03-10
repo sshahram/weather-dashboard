@@ -1,0 +1,17 @@
+header h1 {
+    background-color: black;
+    color:white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+#container {
+    margin-top: 20px;
+}
+
+#searchIcon {
+    background-color: rgb(0, 183, 255);
+    color: white;
+}

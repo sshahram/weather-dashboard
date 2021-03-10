@@ -7,6 +7,7 @@
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
     <!-- header -->
@@ -14,15 +15,19 @@
         <h1 class="text-center">Weather Dashboard</h1>
     </header>
     <!-- container to hold two columns -->
-    <main class="flex-row justify-space-between">
+    <main class="flex-row justify-space-between" id="container">
         <!-- search box and results column -->
         <div class="col-12 col-md-4">
             <!-- search form -->
             <form id="user-search" class="form-inline">
                 <label class="form-label" for="search">Search for a City: </label>
                 <input name="search" id="search" type="text" autofocus="true" class="form-input" />
-                <button type="submit" class="btn fas fa-search"></button>
+                <button type="submit" class="btn" id="searchIcon"><i class="fa fa-search" aria-hidden="true"></i></button>
               </form>
+        </div>
+        <!-- List of searched cities -->
+        <div class="list-group" id="city-list">
+
         </div>
         <!-- weather forcast column -->
         <div class="col-12 col-md-8">
