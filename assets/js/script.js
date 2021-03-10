@@ -25,7 +25,7 @@ var searchClickHandler = function(event) {
 var getWeatherInfo = function(city) {
     // format the weather api url
     API_key = '0de5695b3a983be4cbc0966b74760673'
-    apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}`
+    apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}&units=imperial`
 
     // make a request to the url
     fetch(apiUrl)
@@ -61,8 +61,8 @@ var displayWeatherinfo = function(forecast, searchCity) {
 
     // create html element to hold information
     var weather = document.createElement("div")
-    weather.classList ="list-group-item list-group-item-action active"
-    weather.textContent = `weather: ${forecast.main.temp.toFixed(1)} ° F`;
+    weather.classList ="list-group-item"
+    weather.textContent = "weather: " +  forecast.main.temp +  " \u00B0F";
     weatherContainerEl.appendChild(weather);
 
 
