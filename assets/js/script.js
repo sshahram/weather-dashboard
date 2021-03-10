@@ -7,7 +7,7 @@ var weatherContainerEl = document.querySelector("#weatherInfo");
 
 
 // form submission
-var formSubmitHandler = function(event) {
+var searchClickHandler = function(event) {
     event.preventDefault();
 
     // get value from input element
@@ -57,7 +57,7 @@ var displayWeatherinfo = function(forecast, searchCity) {
     }
     // clear old content
     weatherContainerEl.textContent = "";
-    citySearchTerm.textContent = searchCity;
+    // citySearchTerm.textContent = searchCity;
 
     // create html element to hold information
     var weather = document.createElement("div")
@@ -68,4 +68,4 @@ var displayWeatherinfo = function(forecast, searchCity) {
 
 };
 
-searchBtnEl.onClick(displayWeatherinfo());
+searchBtnEl.addEventListener("click", searchClickHandler);

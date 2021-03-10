@@ -4,14 +4,12 @@ header h1 {
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
-    margin: 0;
+    margin-bottom: 40px;
+    width: 100%;
 }
 
-#container {
-    margin-top: 20px;
-}
 
-#searchIcon {
+#searchBtn {
     background-color: rgb(0, 183, 255);
     color: white;
 }
