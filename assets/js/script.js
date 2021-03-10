@@ -57,25 +57,31 @@ var displayWeatherinfo = function(forecast, searchCity) {
     }
     // clear old content
     weatherContainerEl.textContent = "";
-    // citySearchTerm.textContent = searchCity;
 
     // create html element to hold information
 
+    // city name
+    var cityName = document.createElement("h2")
+    cityName.classList ="card-title d-flex align-items-center lead font-weight-bold"
+    cityName.textContent =  forecast.name;
+    weatherContainerEl.appendChild(cityName);
+
+
     // temperature
     var temperature = document.createElement("div")
-    temperature.classList ="list-group-item"
+    temperature.classList ="card-text"
     temperature.textContent = "Temperature: " +  forecast.main.temp +  " \u00B0F";
     weatherContainerEl.appendChild(temperature);
 
     // humidity
     var humidity = document.createElement("div")
-    humidity.classList ="list-group-item"
+    humidity.classList ="card-text"
     humidity.textContent = "Humidity: " +  forecast.main.humidity +  " %";
     weatherContainerEl.appendChild(humidity);
 
     // wind speed
     var windSpeed = document.createElement("div")
-    windSpeed.classList ="list-group-item"
+    windSpeed.classList ="card-text"
     windSpeed.textContent = "Wind Speed: " +  forecast.wind.speed +  " MPH";
     weatherContainerEl.appendChild(windSpeed);
 
