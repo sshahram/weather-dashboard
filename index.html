@@ -15,9 +15,10 @@
         <h1 class="text-center">Weather Dashboard</h1>
     </header>
     <!-- container to hold two columns -->
-    <main class="flex-row justify-space-between" id="container">
+    <main class="container" id="container">
+        <div class= "row">
         <!-- search box and results column -->
-        <div class="col-12 col-md-4">
+        <div class="col-4">
             <!-- search form -->
             <form id="user-search" class="form-inline">
                 <label class="form-label" for="search">Search for a City: </label>
@@ -26,15 +27,15 @@
               </form>
         </div>
         <!-- List of searched cities -->
-        <div class="list-group" id="city-list">
+        <!-- <div class="list-group" id="city-list">
 
-        </div>
+        </div> -->
         <!-- weather forcast column -->
-        <div class="col-12 col-md-8" id="weather-container">
+        <div class="col-8" id="weather-container">
             <h2 class="subtitle" id="city-search-term"><span id="date"></span></h2>
             <div id="weather-info-container" class="list-group"></div>
         </div>
-        
+    </div>
     </main>
     <script src="./assets/js/script.js"></script>
 </body>

@@ -2,7 +2,7 @@
 var userFormEl = document.querySelector("#user-search");
 var cityInputEl = document.querySelector("#search");
 // weather varibales (right-hand column) 
-var weatherContainerEl = document.querySelector("#weather-container");
+var weatherContainerEl = document.querySelector("#weather-info-container");
 citySearchTerm = document.querySelector("#city-search-term");
 
 
@@ -25,7 +25,7 @@ var formSubmitHandler = function(event) {
 var getWeatherInfo = function(city) {
     // format the weather api url
     API_key = '0de5695b3a983be4cbc0966b74760673'
-    apiUrl = `http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=${API_key}&q=${city}`
+    apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}`
 
     // make a request to the url
     fetch(apiUrl)
@@ -61,8 +61,8 @@ var displayWeatherinfo = function(forecast, searchCity) {
 
     // create html element to hold information
     var weather = document.createElement("div")
-    weather.classList ="list-item flex-row justify-space-between"
-    weather.textContent = `weather: ${forecast.temp}`;
+    weather.classList ="list-group-item list-group-item-action active"
+    weather.textContent = `weather: ${forecast.main.temp.toFixed(1)} ° F`;
     weatherContainerEl.appendChild(weather);
 
 
