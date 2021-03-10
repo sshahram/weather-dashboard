@@ -1,9 +1,9 @@
 // form variables (left-hand column)
-var userFormEl = document.querySelector("#user-search");
-var cityInputEl = document.querySelector("#search");
+var searchBtnEl = document.querySelector("#searchBtn");
+var cityInputEl = document.querySelector("#citySearch");
 // weather varibales (right-hand column) 
-var weatherContainerEl = document.querySelector("#weather-info-container");
-citySearchTerm = document.querySelector("#city-search-term");
+var weatherContainerEl = document.querySelector("#weatherInfo");
+
 
 
 // form submission
@@ -68,4 +68,4 @@ var displayWeatherinfo = function(forecast, searchCity) {
 
 };
 
-userFormEl.addEventListener("submit", formSubmitHandler);
+searchBtnEl.onClick(displayWeatherinfo());
