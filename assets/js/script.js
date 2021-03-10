@@ -1,3 +1,5 @@
+API_key = '0de5695b3a983be4cbc0966b74760673'
+
 // form variables (left-hand column)
 var searchBtnEl = document.querySelector("#searchBtn");
 var cityInputEl = document.querySelector("#citySearch");
@@ -24,7 +26,6 @@ var searchClickHandler = function(event) {
 
 var getWeatherInfo = function(city) {
     // format the weather api url
-    API_key = '0de5695b3a983be4cbc0966b74760673'
     apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}&units=imperial`
 
     // make a request to the url
@@ -63,9 +64,14 @@ var displayWeatherinfo = function(forecast, searchCity) {
     // city name and date
     var cityName = document.createElement("h2")
     cityName.classList ="card-title d-flex align-items-center lead font-weight-bold"
-    cityName.textContent =  forecast.name + " (" + moment().format("L") + ")";
+    cityName.textContent =  forecast.name + " (" + moment().format("L") + ") ";
     weatherContainerEl.appendChild(cityName);
 
+    // weather icon
+    var iconURL = "http://openweathermap.org/img/wn/" + forecast.weather[0].icon +"@2x.png";
+    var weatherIcon = document.createElement("img");
+    weatherIcon.setAttribute("src", iconURL);
+    weatherContainerEl.appendChild(weatherIcon);
 
     // temperature
     var temperature = document.createElement("div")
@@ -89,5 +95,10 @@ var displayWeatherinfo = function(forecast, searchCity) {
     // add function for uv index here
 
 };
+
+// var weatherIcon = function(icon) {
+//     apiUrlIcon = `http://openweathermap.org/img/wn/${icon}@2x.png`
+
+// }
 
 searchBtnEl.addEventListener("click", searchClickHandler);
