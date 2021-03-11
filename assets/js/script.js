@@ -5,6 +5,7 @@ var searchBtnEl = document.querySelector("#searchBtn");
 var cityInputEl = document.querySelector("#citySearch");
 // weather varibales (right-hand column) 
 var weatherContainerEl = document.querySelector("#weatherInfo");
+var titleEl = document.querySelector("#title");
 
 
 
@@ -58,20 +59,22 @@ var displayWeatherinfo = function(forecast, searchCity) {
     }
     // clear old content
     weatherContainerEl.textContent = "";
+    titleEl.textContent ="";
 
     // create html element to hold information
 
     // city name and date
-    var cityName = document.createElement("h2")
-    cityName.classList ="card-title d-flex align-items-center lead font-weight-bold"
+    var cityName = document.createElement("h3")
+    cityName.classList ="card-title align-center"
     cityName.textContent =  forecast.name + " (" + moment().format("L") + ") ";
-    weatherContainerEl.appendChild(cityName);
+    titleEl.appendChild(cityName);
 
     // weather icon
     var iconURL = "http://openweathermap.org/img/wn/" + forecast.weather[0].icon +"@2x.png";
     var weatherIcon = document.createElement("img");
     weatherIcon.setAttribute("src", iconURL);
-    weatherContainerEl.appendChild(weatherIcon);
+    titleEl.appendChild(weatherIcon);
+    
 
     // temperature
     var temperature = document.createElement("div")

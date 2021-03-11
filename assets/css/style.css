@@ -14,3 +14,26 @@ header h1 {
     color: white;
 }
 
+#title {
+    padding-top: 20px;
+}
+
+#title img {
+    width: 5%;
+    height: 5%;
+}
+
+#weatherForcast {
+    margin-left: 20px;
+}
+
+.card-title {
+    padding-left: 20px;
+}
+
+.card-body {
+    padding-top:0;
+}
+ .card-text {
+    padding-left: 27px;
+}
