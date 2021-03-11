@@ -19,7 +19,7 @@ header h1 {
 }
 
 #title img {
-    width: 5%;
+    width: 10%;
     height: 5%;
 }
 
@@ -37,3 +37,4 @@ header h1 {
  .card-text {
     padding-left: 27px;
 }
+

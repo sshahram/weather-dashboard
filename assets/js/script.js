@@ -96,8 +96,31 @@ var displayWeatherinfo = function(forecast, searchCity) {
 
     // uv index
     // add function for uv index here
-
-};
+    var lat = forecast.coord.lat;
+    var lon = forecast.coord.lon;
+    var uvUrl = `http://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${API_key}`;
+    // make a request to the url
+     fetch(uvUrl)
+     .then(function(response) {
+         // request was successful
+         if(response.ok) {
+             response.json().then(function(data) {
+                 console.log(data);
+                 //create html element to diplay result
+                 var uvIndex = document.createElement("div");
+                 uvIndex.classList = "card-text";
+                 uvIndex.textContent = "UV Index: " + data.value;
+                 weatherContainerEl.appendChild(uvIndex);
+                 
+             });
+         } else {
+             alert("Error: " + response.status)
+         }
+     })
+     .catch(function(error) {
+         alert("Unable to connect to weather api!")
+     });
+    };
 
 // var weatherIcon = function(icon) {
 //     apiUrlIcon = `http://openweathermap.org/img/wn/${icon}@2x.png`
