@@ -13,31 +13,136 @@
 <body>
     <!-- header -->
     <header>
-        <h1 class="display-5 text-center">Weather Dashboard</h1>
-    </header>
+        <h1 class="bg-dark text-white text-center">Weather Dashboard</h1>
+      </header>
     <!-- container to hold two columns -->
-    <main class="container-fluid" id="container">
-        <div class= "row">
-        <!-- search box and results column -->
-            <div class="col-4">
-                <!-- search  -->
-                <h3>Search for a city:</h3>
-                <div class="input-group mb-4">
-                    <input type="text" class="form-control" id="citySearch" />
-                        <button class="btn btn-outline-primary fa fa-search" type="submit" id="searchBtn"></button>
-                </div>
-                    <!-- List of searched cities -->
-                    <div class="list-group" id="cityList"></div>                    
-                </div>
-                <!-- Weather Information -->
-                <div class="col-8" id="weatherContainer">
-                    <div class="card" id="weatherForecast">
-                        <div class="card-title d-inline-flex align-center" id="title"></div>
-                        <div class="card-body" id="weatherInfo"></div>
-                    </div>
-                      <div id="fiveDayForecast"></div>
-                </div>
-        </div>
+     <main>
+      <div class="row">
+        <section class="col-12 col-lg-3 bg-light py-4 mblank-0 d-flex flex-column" id="container">
+            <!-- form to search for a city -->
+          <form class="group" id="search-city">
+            <label for="search" class="col col-12">Search for a city:</label>
+            <div class="form-check-inline col col-12 px-3">
+              <input type="text" class="input" name ="search" autofocus="true" />
+              <button type="submit" class="btn btn-primary" id="btnSearch"><i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+          <!-- List to hold city names -->
+          <li class="list-group col col-12 d-none d-lg-block px-3" id="city-list"></li>
+        </section>
+
+        <!-- container to display weather information -->
+        <section class="col-12 col-lg-9 mt-3 d-flex flex-column px-3" id="display-weather-info">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title d-flex align-items-center lead font-weight-bold" style="height: 100px">
+                <span id="city-name"></span>
+                <span class="px-3" id="date"></span>
+                <img class="icon" id="icon-today" src="">
+                </img>
+              </h2>
+              <p class="card-text">
+                  Temperature:
+                <span id="temperature"></span>
+              </p>
+              <p class="card-text">
+                  Humidity:
+                <span id="humidity"></span>
+              </p>
+              <p class="card-text">
+                  Wind Speed:
+                <span id="wind-speed"></span>
+              </p>
+              <p class="card-text">
+                  UV Index
+                <span id="uv-index"></span>
+              </p>
+            </div>
+          </div>
+          <!-- container to show 5-day forecast -->
+          <div>
+            <h2 class="card-title d-flex align-items-center lead font-weight-bold mt-3">
+              5-Day Forecast:
+            </h2>
+            <div class="row justify-content-between">
+            <!-- first future day -->
+              <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
+                <p class="card-title font-weight-bold" id="day-one"></p>
+                <p class="card-text" style="height: 100px">
+                  <img class="icon" id="icon-day-one" src="">
+                </img>
+                </p>
+                <p class="card-text">Temperature:
+                  <spanid id="temperature-one"></span>
+                </p>
+                <p class="card-text">Humidity:
+                  <span id="humidity-one"></span>
+                </p>
+              </div>
+              <!-- second future day -->
+              <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
+                <p class="card-title font-weight-bold" id="day-two"></p>
+                <p class="card-text">
+                  <img class="icon" id="icon-day-two" src="">
+                </img>
+                </p>
+                <p class="card-text">Temperature:
+                  <spanid id="tempDay2"></span>
+                </p>
+                <p class="card-text">Humidity:
+                  <span id="humidity-two"></span>
+                </p>
+              </div>
+              <!-- third future day -->
+              <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
+                <p class="card-title font-weight-bold" id="day-three"></p>
+                <p class="card-text">
+                  <img class="icon" id="icon-day-three" src="">
+                </img>
+                </p>
+                <p class="card-text">Temperature:
+                  <span id="temperature-three"></span>
+                </p>
+                <p class="card-text">Humidity:
+                  <span id="humidity-three"></span>
+                </p>
+              </div>
+
+              <!-- four future day -->
+              <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
+                <p class="card-title font-weight-bold" id="day-four"></p>
+                <p class="card-text">
+                  <img class="icon" id="icon-day-four" src="">
+                </img>
+                </p>
+                <p class="card-text">Temperature:
+                  <spanid id="temperature-four"></span>
+                </p>
+                <p class="card-text">Humidity:
+                  <span id="humidity-four"></span>
+                </p>
+              </div>
+
+              <!-- five future day -->
+              <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
+                <p class="card-title font-weight-bold" id="day-five"></p>
+                <p class="card-text">
+                  <img class="icon" id="icon-day-five" src="">
+                </img>
+                </p>
+                <p class="card-text">Temperature:
+                  <spanid id="temperature-five"></span>
+                </p>
+                <p class="card-text">Humidity:
+                  <span id="humidity-five"></span>
+                </p>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
