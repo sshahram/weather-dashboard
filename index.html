@@ -23,7 +23,7 @@
           <form class="group" id="search-city">
             <label for="search" class="col col-12">Search for a city:</label>
             <div class="form-check-inline col col-12 px-3">
-              <input type="text" class="input" name ="search" autofocus="true" />
+              <input type="text" class="input" id ="search" autofocus="true" />
               <button type="submit" class="btn btn-primary" id="btnSearch"><i class="fas fa-search"></i>
               </button>
             </div>
@@ -43,99 +43,99 @@
                 </img>
               </h2>
               <p class="card-text">
-                  Temperature:
+                  Temperature: 
                 <span id="temperature"></span>
               </p>
               <p class="card-text">
-                  Humidity:
+                  Humidity: 
                 <span id="humidity"></span>
               </p>
               <p class="card-text">
-                  Wind Speed:
+                  Wind Speed: 
                 <span id="wind-speed"></span>
               </p>
               <p class="card-text">
-                  UV Index
+                  UV Index: 
                 <span id="uv-index"></span>
               </p>
             </div>
           </div>
           <!-- container to show 5-day forecast -->
           <div>
-            <h2 class="card-title d-flex align-items-center lead font-weight-bold mt-3">
+            <h2 class="card-title d-flex align-items-center lead font-weight-bold mt-3"  style="height: 50px">
               5-Day Forecast:
             </h2>
             <div class="row justify-content-between">
             <!-- first future day -->
               <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
-                <p class="card-title font-weight-bold" id="day-one"></p>
+                <p class="card-title font-weight-bold" id="day-1"></p>
                 <p class="card-text" style="height: 100px">
-                  <img class="icon" id="icon-day-one" src="">
+                  <img class="icon" id="icon-day-1" src="">
                 </img>
                 </p>
-                <p class="card-text">Temperature:
-                  <spanid id="temperature-one"></span>
+                <p class="card-text">Temperature: 
+                  <span id="temperature-1"></span>
                 </p>
-                <p class="card-text">Humidity:
-                  <span id="humidity-one"></span>
+                <p class="card-text">Humidity: 
+                  <span id="humidity-1"></span>
                 </p>
               </div>
               <!-- second future day -->
               <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
-                <p class="card-title font-weight-bold" id="day-two"></p>
-                <p class="card-text">
-                  <img class="icon" id="icon-day-two" src="">
+                <p class="card-title font-weight-bold" id="day-2"></p>
+                <p class="card-text" style="height: 100px">
+                  <img class="icon" id="icon-day-2" src="">
                 </img>
                 </p>
-                <p class="card-text">Temperature:
-                  <spanid id="tempDay2"></span>
+                <p class="card-text">Temperature: 
+                  <span id="temperature-2"></span>
                 </p>
-                <p class="card-text">Humidity:
-                  <span id="humidity-two"></span>
+                <p class="card-text">Humidity: 
+                  <span id="humidity-2"></span>
                 </p>
               </div>
               <!-- third future day -->
               <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
-                <p class="card-title font-weight-bold" id="day-three"></p>
-                <p class="card-text">
-                  <img class="icon" id="icon-day-three" src="">
+                <p class="card-title font-weight-bold" id="day-3"></p>
+                <p class="card-text" style="height: 100px">
+                  <img class="icon" id="icon-day-3" src="">
                 </img>
                 </p>
-                <p class="card-text">Temperature:
-                  <span id="temperature-three"></span>
+                <p class="card-text">Temperature: 
+                  <span id="temperature-3"></span>
                 </p>
-                <p class="card-text">Humidity:
-                  <span id="humidity-three"></span>
+                <p class="card-text">Humidity: 
+                  <span id="humidity-3"></span>
                 </p>
               </div>
 
               <!-- four future day -->
               <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
-                <p class="card-title font-weight-bold" id="day-four"></p>
-                <p class="card-text">
-                  <img class="icon" id="icon-day-four" src="">
+                <p class="card-title font-weight-bold" id="day-4"></p>
+                <p class="card-text" style="height: 100px">
+                  <img class="icon" id="icon-day-4" src="">
                 </img>
                 </p>
-                <p class="card-text">Temperature:
-                  <spanid id="temperature-four"></span>
+                <p class="card-text">Temperature: 
+                  <span id="temperature-4"></span>
                 </p>
-                <p class="card-text">Humidity:
-                  <span id="humidity-four"></span>
+                <p class="card-text">Humidity: 
+                  <span id="humidity-4"></span>
                 </p>
               </div>
 
               <!-- five future day -->
               <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
-                <p class="card-title font-weight-bold" id="day-five"></p>
-                <p class="card-text">
-                  <img class="icon" id="icon-day-five" src="">
+                <p class="card-title font-weight-bold" id="day-5"></p>
+                <p class="card-text" style="height: 100px">
+                  <img class="icon" id="icon-day-5" src="">
                 </img>
                 </p>
-                <p class="card-text">Temperature:
-                  <spanid id="temperature-five"></span>
+                <p class="card-text">Temperature: 
+                  <span id="temperature-5"></span>
                 </p>
-                <p class="card-text">Humidity:
-                  <span id="humidity-five"></span>
+                <p class="card-text">Humidity: 
+                  <span id="humidity-5"></span>
                 </p>
               </div>
               
@@ -144,6 +144,7 @@
         </section>
       </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
