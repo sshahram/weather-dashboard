@@ -8,6 +8,7 @@ var apiUrlForecast = "https://api.openweathermap.org/data/2.5/onecall?";
 var apiUrlUvIndex = "https://api.openweathermap.org/data/2.5/uvi?";
 var cityArray = [];
 var numSaved = 10;
+var inputEl = document.getElementById("search");
 
 // function to get current weather information
 
@@ -153,6 +154,7 @@ listCities();
 var formHandler = function (event) {
   event.preventDefault();
   var citySearched = $("#search").val().trim();
+ inputEl.value ="";
   var newSearch = CityNameSaved(citySearched);
   currentWeather(citySearched);
   if (newSearch == 1) {
