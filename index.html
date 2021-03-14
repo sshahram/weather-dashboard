@@ -21,7 +21,7 @@
         <section class="col-12 col-lg-3 bg-light py-4 mblank-0 d-flex flex-column" id="container">
             <!-- form to search for a city -->
           <form class="group" id="search-city">
-            <label for="search" class="col col-12">Search for a city:</label>
+            <label for="search" id ="label" class="col col-12">Search for a city:</label>
             <div class="form-check-inline col col-12 px-3">
               <input type="text" class="input" id ="search" autofocus="true" />
               <button type="submit" class="btn btn-primary" id="btnSearch"><i class="fas fa-search"></i>
@@ -37,8 +37,8 @@
           <div class="card">
             <div class="card-body">
               <h2 class="card-title d-flex align-items-center lead font-weight-bold" style="height: 100px">
-                <span id="city-name"></span>
-                <span class="px-3" id="date"></span>
+                <span id="city-name">City Name</span>
+                <span class="px-3" id="date">(date)</span>
                 <img class="icon" id="icon-today" src="">
                 </img>
               </h2>
@@ -62,14 +62,14 @@
           </div>
           <!-- container to show 5-day forecast -->
           <div>
-            <h2 class="card-title d-flex align-items-center lead font-weight-bold mt-3"  style="height: 50px">
+            <h2 class="card-title d-flex align-items-center lead font-weight-bold mt-3" id="fiveDayForecast">
               5-Day Forecast:
             </h2>
-            <div class="row justify-content-between">
+            <div id="futureForecast" class="row justify-content-between">
             <!-- first future day -->
               <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
                 <p class="card-title font-weight-bold" id="day-1"></p>
-                <p class="card-text" style="height: 100px">
+                <p class="card-text futureCol">
                   <img class="icon" id="icon-day-1" src="">
                 </img>
                 </p>
@@ -83,7 +83,7 @@
               <!-- second future day -->
               <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
                 <p class="card-title font-weight-bold" id="day-2"></p>
-                <p class="card-text" style="height: 100px">
+                <p class="card-text futureCol">
                   <img class="icon" id="icon-day-2" src="">
                 </img>
                 </p>
@@ -97,7 +97,7 @@
               <!-- third future day -->
               <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
                 <p class="card-title font-weight-bold" id="day-3"></p>
-                <p class="card-text" style="height: 100px">
+                <p class="card-text futureCol">
                   <img class="icon" id="icon-day-3" src="">
                 </img>
                 </p>
@@ -112,7 +112,7 @@
               <!-- four future day -->
               <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
                 <p class="card-title font-weight-bold" id="day-4"></p>
-                <p class="card-text" style="height: 100px">
+                <p class="card-text futureCol">
                   <img class="icon" id="icon-day-4" src="">
                 </img>
                 </p>
@@ -127,7 +127,7 @@
               <!-- five future day -->
               <div class="col-sm-2 card-body bg-primary text-white rounded mb-3">
                 <p class="card-title font-weight-bold" id="day-5"></p>
-                <p class="card-text" style="height: 100px">
+                <p class="card-text futureCol">
                   <img class="icon" id="icon-day-5" src="">
                 </img>
                 </p>
