@@ -38,3 +38,18 @@ header h1 {
     padding-left: 27px;
 }
 
+.favorable {
+    background-color: rgb(178, 238, 144);
+}
+
+.moderate {
+    background-color: yellow ;
+}
+
+.severe {
+    background-color: red;
+}
+
+.display {
+    display:none;
+}

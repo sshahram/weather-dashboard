@@ -49,10 +49,8 @@ var getWeatherInfo = function(city) {
 };
 
 var displayWeatherinfo = function(forecast, searchCity) {
-    console.log(forecast);
-    console.log(searchCity);
 
-    // check it api returns any weather information
+    // check if api returns any weather information
     if(forecast.length === 0) {
         weatherContainerEl.textContent = "No weather information found.";
         return;
@@ -95,7 +93,6 @@ var displayWeatherinfo = function(forecast, searchCity) {
     weatherContainerEl.appendChild(windSpeed);
 
     // uv index
-    // add function for uv index here
     var lat = forecast.coord.lat;
     var lon = forecast.coord.lon;
     var uvUrl = `http://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${API_key}`;
@@ -106,11 +103,17 @@ var displayWeatherinfo = function(forecast, searchCity) {
          if(response.ok) {
              response.json().then(function(data) {
                  console.log(data);
-                 //create html element to diplay result
-                 var uvIndex = document.createElement("div");
-                 uvIndex.classList = "card-text";
-                 uvIndex.textContent = "UV Index: " + data.value;
-                 weatherContainerEl.appendChild(uvIndex);
+
+                 $("#UVIndexContainer").removeClass();
+                 $("#UVIndexContainer").addClass("card-text")
+                 $("#UVIndex").val(data.value);
+                 if (data.value < 3) {
+                   $("#UVIndex").addClass("p-1 rounded bg-success text-white");
+                 } else if (data.value < 8) {
+                   $("#UVIndex").addClass("p-1 rounded bg-warning text-white");
+                 } else {
+                   $("#UVIndex").addClass("p-1 rounded bg-danger text-white");
+                 }
                  
              });
          } else {
